@@ -1,0 +1,14 @@
+<h1>{{titlee}}</h1>
+
+<div>
+<form class="form-group" #fdata="ngForm" (ngSubmit)="gotval(fdata.value)">
+<label>Name : </label><input type="text" #name='ngModel' placeholder="Eg: Baibhav " class="form-control" ngModel name="Name" required>
+<br>
+
+<label>Tel. : &nbsp; &nbsp;</label><input type="tel" placeholder="Eg : 9860000xx" class="form-control" ngModel name="Contact" required pattern="[\d]?$" maxlength="10"><br>
+<label>Email: &nbsp;</label><input type="email" placeholder="Eg : test@somedomain.com" class="form-control" ngModel name="Email" required email ><br>
+<button type="submit" class="btn btn-primary" style="width: 50px;" [disabled]="fdata.valid" >Add</button>
+</form>
+</div>
+<div>
+<label>Entries</label>

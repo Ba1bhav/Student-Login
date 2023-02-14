@@ -1,0 +1,39 @@
+<p>{{tittle}}</p>
+<button (click)="remove()" class="btn btn-danger">Delete</button>
+<input type="text" placeholder="Search ? eg:1 (Id)" [(ngModel)]="search" class="form-control" style="width: 60%;" (input)="searchThis()"><div>
+<table class="table table-striped">
+
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Contact</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <ng-container *ngIf="std.length && !search &&callme();">
+     <tbody *ngFor="let doc of std; let i = index;">
+       <tr>
+         <td>{{i+1}}</td>
+         <td>{{doc.Name}}</td>
+         <td>{{doc.Contact}}</td>
+         <td>{{doc.Email}}</td>
+       </tr>
+     </tbody>
+   </ng-container>
+   <ng-container *ngIf="std.length && search">
+    <tbody *ngFor="let i of ind;">
+      <tr>
+        <td>{{i+1}}</td>
+        <td>{{std[i].Name}}</td>
+        <td>{{std[i].Contact}}</td>
+        <td>{{std[i].Email}}</td>
+      </tr>
+    </tbody>
+  </ng-container>
+ </table>
+
+</div>
+
+
+
